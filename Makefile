@@ -4,16 +4,16 @@ LDFLAGS=-lSDL2
 OUT=out
 ROM=pong2.bin
 
-all:
-	$(CC) $(CFLAGS) main.c -o $(OUT) $(LDFLAGS)
+all: $(OUT)
+
+$(OUT): main.c helpers.c helpers.h
+	$(CC) $(CFLAGS) main.c helpers.c -o $(OUT) $(LDFLAGS)
 
 test: all
 	./$(OUT) $(ROM)
 
 clean:
-	-rm -f $(BIN_DIS)
-	-rm -f $(BIN)
+	rm -f $(OUT)
 
-.PHONY: clean all test
-
+.PHONY: all clean test
 
