@@ -1,11 +1,14 @@
 #include <stdio.h>
+#include <time.h>
 
 #include "helpers.h"
 
 
 int
-main(void)
+main(int argc, char **argv)
 {
-	printf("Hello emulator world!\n");
+    printf("Hello emulator world!\n");
+
+    return 0;
 }
 
